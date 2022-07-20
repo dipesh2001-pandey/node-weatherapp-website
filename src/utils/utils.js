@@ -1,8 +1,7 @@
 const request = require("request");
-let weatherstackapikey='your weatherkey';
-let positionstackapikey='your positionkey';
+
 const geocode = (address, callback) => {
-  const geocodeurl = `http://api.positionstack.com/v1/forward?access_key=${positionstackapikey}&query=${encodeURIComponent(
+  const geocodeurl = `http://api.positionstack.com/v1/forward?access_key=99af01f495646a87969e501199ce9203&query=${encodeURIComponent(
     address
   )}&limit=1`;
   request({ url: geocodeurl, json: true }, (error, { body }) => {
@@ -20,7 +19,7 @@ const geocode = (address, callback) => {
   });
 };
 const weatherstat = (latitude, longitude, callback) => {
-  const weatherurl = `http://api.weatherstack.com/current?access_key=${weatherstackapikey}&query= ${latitude},${longitude}`;
+  const weatherurl = `http://api.weatherstack.com/current?access_key=7bdcf0ea820fb773b1c11eeb197c0323&query= ${latitude},${longitude}`;
   request({ url: weatherurl, json: true }, (error, { body }) => {
     if (error) {
       callback("Unable to connect to weather service", undefined);
