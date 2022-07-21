@@ -4,6 +4,7 @@ const hbs = require("hbs");
 const utils = require("./utils/utils");
 
 const app = express();
+const port = process.env.PORT || 3000;
 ///paths exsist here///
 const publicdirPath = path.join(__dirname, "../public");
 const viewspath = path.join(__dirname, "../templates/views");
@@ -67,6 +68,6 @@ app.get("*", (req, res) => {
     errormsg: "Page Not found",
   });
 });
-app.listen(3000, () => {
-  console.log("Server is up onport 3000");
+app.listen(port, () => {
+  console.log(`Server is up onport ${port}`);
 });
