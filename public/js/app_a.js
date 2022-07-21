@@ -33,9 +33,6 @@ weatherform.addEventListener("submit", (e) => {
           weather_image.src = `https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/ilu1.webp`;
         } else {
           disp.textContent = "";
-          console.log(data.location);
-          console.log(data.forecast);
-          console.log(data.forecast.weather_icons[0]);
 
           place.textContent = `Place: ${data.location}`;
           weatherdescp.innerHTML = `${data.forecast.weather_description} <br/> Feels like ${data.forecast.feelslike}°C`;
